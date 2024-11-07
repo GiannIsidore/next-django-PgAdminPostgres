@@ -21,8 +21,9 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 # Serializer for the Book model, including nested genres and authors
 class BookSerializer(serializers.ModelSerializer):
-    genres = GenreSerializer(many=True, read_only=True)  # Nested serializer for genres
-    authors = AuthorSerializer(many=True, read_only=True)  # Nested serializer for authors
+    authors = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all(), many=True)
+    genres = serializers.PrimaryKeyRelatedField(queryset=Genre.objects.all(), many=True)
+
     class Meta:
         model = Book
         fields = '__all__'  # Serialize all fields

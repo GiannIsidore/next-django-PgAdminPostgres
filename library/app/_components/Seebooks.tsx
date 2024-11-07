@@ -42,13 +42,13 @@ export default async function SeeBooks() {
               (<h1 className='text-black' key={genre.id}> { genre.name}</h1>)
           )} */}
 
-            {/* {bookData.map((book: Book) =>
+            {bookData.map((book: Book) =>
             (
                 <Link key={book.id} href={`book/${book.id}/`}>
                  <h1 className='text-black' > {book.title}</h1>
                 </Link>
             )
-          )} */}
+          )}
 
             {/* {authorData.map((author: any) =>
                 (

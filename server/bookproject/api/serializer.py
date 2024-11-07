@@ -23,7 +23,6 @@ class AuthorSerializer(serializers.ModelSerializer):
 class BookSerializer(serializers.ModelSerializer):
     genres = GenreSerializer(many=True, read_only=True)  # Nested serializer for genres
     authors = AuthorSerializer(many=True, read_only=True)  # Nested serializer for authors
-
     class Meta:
         model = Book
         fields = '__all__'  # Serialize all fields

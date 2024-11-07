@@ -1,4 +1,4 @@
-import SeeBooks from "./Seebooks";
+import SeeBooks from "./_components/Seebooks";
 
 export default function Home() {
   return (
